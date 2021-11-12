@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep, time
-import SimpleDriverFactory
+from util.driver_factory import DriverFactoty
 
 username = '' # 自行填入使用者帳密
 password = ''
@@ -12,7 +12,7 @@ user_list_file = "tianya_user_id.txt"
 
 class Messager(object):
     def __init__(self):
-        self.driver = SimpleDriverFactory.create_driver(loadImage=2)
+        self.driver = DriverFactoty.create_driver(loadImage=False)
         self.wait = WebDriverWait(self.driver, 20)
 
     def login(self, username, password):
